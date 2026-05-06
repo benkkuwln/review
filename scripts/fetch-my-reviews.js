@@ -1,4 +1,3 @@
-// scripts/fetch-my-reviews.js
 import fs from 'fs/promises';
 import fetch from 'node-fetch';
 
