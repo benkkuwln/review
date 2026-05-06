@@ -51,7 +51,7 @@ jobs:
       - name: Commit tracked appids if changed
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.io"
           git add tracked-appids.txt || true
           git commit -m "Update tracked appids" || echo "no changes"
           git push origin HEAD:main
