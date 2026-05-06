@@ -1,6 +1,6 @@
 async function load() {
   try {
-    const res = await fetch('/data/my-reviews.json', { cache: 'no-store' });
+    const res = await fetch('public/data/my-reviews.json', { cache: 'no-store' });
     if (!res.ok) { throw new Error(res.statusText); }
     const data = await res.json();
     const container = document.getElementById('reviews');
