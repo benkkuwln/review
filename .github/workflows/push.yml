@@ -29,7 +29,6 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git add changelog.txt
         git commit -m "Update changelog"
         git push origin main # push to the main branch
       env:
