@@ -22,7 +22,7 @@ async function fetchReviewsForApp(appid){
   let cursor = '*';
   const found = [];
   for (let page=0; page<10; page++){
-    const url = `https://store.steampowered.com/appreviews/${appid}?json=1&language=all&filter=recent&num_per_page=${perPage}&cursor=${encodeURIComponent(cursor)}`;
+    const url = `https://store.steampowered.com/appreviews/${appid}?json=1&language=all&filter=all&num_per_page=${perPage}&cursor=${encodeURIComponent(cursor)}`;
     const res = await fetch(url);
     if (!res.ok) break;
     const data = await res.json();
