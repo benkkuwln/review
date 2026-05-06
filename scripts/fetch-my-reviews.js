@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import fetch from 'node-fetch';
 
 const MY_STEAMID = process.env.MY_STEAMID64;
 const APPIDS = (process.env.APPIDS || '').split(',').map(s=>s.trim()).filter(Boolean);
