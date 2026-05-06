@@ -1,0 +1,12 @@
+{
+  "name": "steam-my-reviews",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch-my-reviews.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.4.1"
+  }
+}

@@ -1,0 +1,9 @@
+body{font-family:system-ui,Arial,Helvetica,sans-serif;max-width:900px;margin:32px auto;padding:0 16px;color:#111}
+h1{margin:0 0 12px}
+.muted{color:#666;margin-bottom:8px}
+.review{border:1px solid #e2e2e2;padding:12px;border-radius:8px;margin:12px 0;background:#fff}
+.meta{display:flex;gap:12px;align-items:center;font-size:0.95rem}
+.appid{color:#666;font-size:0.9rem}
+.date{margin-left:auto;color:#666;font-size:0.9rem}
+.play{font-size:0.9rem;color:#444;margin-top:6px}
+.text{white-space:pre-wrap;margin-top:10px}
