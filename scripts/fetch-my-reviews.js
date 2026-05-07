@@ -60,6 +60,13 @@ async function fetchReviewsForApp(appid){
       console.error('Error fetching', appid, e);
     }
   }
+  const finalSeen = new Set();
+  out.reviews = out.reviews.filter(r => {
+    const key = `${r.appid}:${r.recommendationid}`;
+    if (finalSeen.has(key)) return false;
+    finalSeen.add(key);
+    return true;
+  });
   await fs.mkdir('public/data', { recursive: true });
   await fs.writeFile('public/data/my-reviews.json', JSON.stringify(out, null, 2), 'utf8');
   console.log('Wrote public/data/my-reviews.json with', out.reviews.length, 'reviews');
