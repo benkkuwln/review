@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "fetch": "node scripts/fetch-my-reviews.js"
+    "fetch": "node scripts/fetch-my-reviews.js",
+    "scan-appids": "node scripts/find-reviewed-appids.js"
   },
   "dependencies": {}
 }

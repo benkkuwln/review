@@ -1,5 +1,7 @@
 // scripts/fetch-my-reviews.js
 import fs from 'fs/promises';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
 const MY_STEAMID = process.env.MY_STEAMID64;
 const APPIDS_SECRET = (process.env.APPIDS || '').split(',').map(s=>s.trim()).filter(Boolean);
 
@@ -8,7 +10,7 @@ if (!MY_STEAMID) {
   process.exit(1);
 }
 
-async function readTracked(){
+export async function readTracked(){
   try {
     const txt = await fs.readFile('tracked-appids.txt', 'utf8');
     return txt.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
@@ -17,7 +19,12 @@ async function readTracked(){
   }
 }
 
-async function fetchReviewsForApp(appid){
+export async function getAppIds(){
+  const tracked = await readTracked();
+  return Array.from(new Set([...APPIDS_SECRET, ...tracked]));
+}
+
+export async function fetchReviewsForApp(appid){
   const perPage = 100;
   let cursor = '*';
   const found = [];
@@ -44,7 +51,7 @@ async function fetchReviewsForApp(appid){
   return found;
 }
 
-(async ()=>{
+async function main(){
   const tracked = await readTracked();
   const appids = Array.from(new Set([...APPIDS_SECRET, ...tracked]));
   if (appids.length === 0) {
@@ -70,4 +77,11 @@ async function fetchReviewsForApp(appid){
   await fs.mkdir('public/data', { recursive: true });
   await fs.writeFile('public/data/my-reviews.json', JSON.stringify(out, null, 2), 'utf8');
   console.log('Wrote public/data/my-reviews.json with', out.reviews.length, 'reviews');
-})();
+}
+
+if (process.argv[1] === __filename) {
+  main().catch(e => {
+    console.error(e);
+    process.exit(1);
+  });
+}
