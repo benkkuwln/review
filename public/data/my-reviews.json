@@ -1,5 +1,5 @@
 {
-  "generated_at": 1778353772786,
+  "generated_at": 1778359883687,
   "mySteamId": "76561199015101716",
   "reviews": [
     {
@@ -10,7 +10,7 @@
         "personaname": "Blandeu",
         "persona_status": "online",
         "profile_url": "https://steamcommunity.com/id/Blandeu/",
-        "num_games_owned": 103,
+        "num_games_owned": 105,
         "num_reviews": 30,
         "playtime_forever": 2930,
         "playtime_last_two_weeks": 0,
@@ -66,7 +66,7 @@
         "num_games_owned": 105,
         "num_reviews": 30,
         "playtime_forever": 1017,
-        "playtime_last_two_weeks": 659,
+        "playtime_last_two_weeks": 574,
         "playtime_at_review": 1017,
         "last_played": 1777658708,
         "avatar": "a40350613938794c45f5ed34807b5e21d0460da9"
